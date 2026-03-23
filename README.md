@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Portfolio Website
 
-## Getting Started
+A multi-page portfolio built with Next.js (App Router), React 19, TypeScript, and Tailwind CSS v4.
 
-First, run the development server:
+## Features
+
+- Page-based routing: Home, About, Projects (with dynamic `[slug]` pages), Contact
+- Server-side rendering: Home uses `connection()` (request-time render)
+- Server Actions: Contact form submits to a server action (`app/contact/actions.ts`)
+- Optimized images: Uses `next/image` with local images in `public/`
+
+## Routes
+
+- `/` — Home (`app/page.tsx`)
+- `/about` — About (`app/about/page.tsx`)
+- `/projects` — Projects (`app/projects/page.tsx`)
+- `/projects/[slug]` — Project details (`app/projects/[slug]/page.tsx`)
+- `/contact` — Contact (`app/contact/page.tsx`)
+
+## Project Structure
+
+- `app/` — Pages, layouts, and route files
+- `components/` — Shared UI components
+- `styles/` — CSS modules used by components/pages
+- `lib/` — Data and helpers (`lib/site.ts`, `lib/projects.ts`)
+- `public/` — Images and static assets
+
+## Customize Content
+
+- Update name, links, and email in `lib/site.ts`
+- Update project list in `lib/projects.ts`
+- Replace images in `public/profile.svg` and `public/projects/*.svg`
+
+## Run Locally (Windows PowerShell)
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm.cmd install
+npm.cmd run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Quality Checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm.cmd run lint
+npm.cmd run typecheck
+npm.cmd run build
+```
 
-## Learn More
+Note: `next.config.ts` enables `experimental.workerThreads` to avoid `child_process` workers on some Windows environments, and skips Next’s built-in type-check step during `next build`. Run `npm.cmd run typecheck` in CI.
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Deploy on Vercel:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Push this repo to GitHub
+2. Import the project in Vercel
+3. Build command: `npm run build`
+4. Output: handled automatically by Next.js

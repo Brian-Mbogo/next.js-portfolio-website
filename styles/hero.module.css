@@ -1,0 +1,19 @@
+.glow {
+  background:
+    radial-gradient(
+      800px circle at 20% 10%,
+      rgba(99, 102, 241, 0.22),
+      transparent 45%
+    ),
+    radial-gradient(
+      800px circle at 80% 30%,
+      rgba(16, 185, 129, 0.18),
+      transparent 40%
+    ),
+    radial-gradient(
+      700px circle at 50% 70%,
+      rgba(236, 72, 153, 0.14),
+      transparent 42%
+    );
+}
+
