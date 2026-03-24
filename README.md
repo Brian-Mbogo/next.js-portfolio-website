@@ -1,13 +1,13 @@
 # Next.js Portfolio Website
 
-A multi-page portfolio built with Next.js (App Router), React 19, TypeScript, and Tailwind CSS v4.
+My personal portfolio site built with Next.js (App Router), React 19, TypeScript, and Tailwind CSS v4. It’s fast, responsive, and easy to customize.
 
-## Features
+## What’s inside
 
-- Page-based routing: Home, About, Projects (with dynamic `[slug]` pages), Contact
-- Server-side rendering: Home uses `connection()` (request-time render)
-- Server Actions: Contact form submits to a server action (`app/contact/actions.ts`)
-- Optimized images: Uses `next/image` with local images in `public/`
+- Pages: Home, About, Projects (with dynamic `[slug]` pages), Contact
+- Server-rendered home page (uses `connection()` for request-time rendering)
+- Contact form powered by a Server Action (`app/contact/actions.ts`)
+- Optimized images via `next/image` (assets in `public/`)
 
 ## Routes
 
@@ -48,7 +48,7 @@ npm.cmd run typecheck
 npm.cmd run build
 ```
 
-Note: `next.config.ts` enables `experimental.workerThreads` to avoid `child_process` workers on some Windows environments, and skips Next’s built-in type-check step during `next build`. Run `npm.cmd run typecheck` in CI.
+Note: `next.config.ts` enables `experimental.workerThreads` to avoid `child_process` workers on some Windows environments, and it skips Next.js’ built-in type-check step during `next build`. Run `npm.cmd run typecheck` in CI.
 
 ## Deploy
 

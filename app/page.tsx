@@ -72,7 +72,7 @@ export default async function Home() {
                   </p>
                 </div>
               </div>
-              <dl className="mt-6 grid grid-cols-2 gap-4 text-sm">
+              <dl className="mt-6 grid grid-cols-1 gap-4 text-sm sm:grid-cols-2">
                 <div className="rounded-xl border border-black/10 bg-white/60 p-4 dark:border-white/10 dark:bg-black/30">
                   <dt className="text-xs font-semibold text-black/60 dark:text-white/60">
                     Focus
@@ -95,7 +95,7 @@ export default async function Home() {
         </section>
 
         <section className="space-y-6 pb-14">
-          <div className="flex items-end justify-between gap-6">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
             <div className="space-y-2">
               <h2 className="text-xl font-semibold tracking-tight text-black dark:text-white">
                 Featured Projects
